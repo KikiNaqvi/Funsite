@@ -1,352 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kiyan's Fun World - Games</title>
-  <!-- Google Font for style -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <!-- Three.js CDN for our 3D game -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazing Fast Website</title>
+  <!-- Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* Reset and Global Styles */
+    * {
       margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #00ffff;
-      font-family: 'Press Start 2P', cursive;
+      padding: 0;
+      box-sizing: border-box;
     }
-
-    /* Container for Games Tab */
-    .games-container {
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f3f4f6;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Navigation Bar */
+    .nav-container {
+      background: #1f2937;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .nav-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-bar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-bar li {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: #f9fafb;
+      font-weight: 700;
+      transition: background 0.3s ease, color 0.3s ease;
+      border-radius: 5px;
+    }
+    .nav-bar li:hover,
+    .nav-bar li.active {
+      background: #f9fafb;
+      color: #1f2937;
+    }
+    /* Page Container */
+    .page-container {
+      flex: 1;
       max-width: 1200px;
       margin: 2rem auto;
       padding: 1rem;
-      text-align: center;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.5s forwards;
     }
-
-    /* Game Navigation Menu */
-    .games-menu {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
+    /* Fade in Animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .games-menu li {
-      margin: 0 1rem;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border: 2px solid #00ffff;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    .games-menu li:hover,
-    .games-menu li.active {
-      background: #00ffff;
-      color: black;
-    }
-
-    /* Game Section styling */
-    .game-section {
+    /* Tab Content Sections */
+    .tab-content {
       display: none;
     }
-    .game-section.active {
+    .tab-content.active {
       display: block;
+      animation: fadeIn 0.5s forwards;
     }
-    .game-canvas {
-      border: 2px solid #00ffff;
-      background: #000;
-      margin: 1rem auto;
-      display: block;
-    }
-    .game-description {
-      margin: 1rem auto;
-      max-width: 800px;
-      text-align: left;
-      background: rgba(0,0,0,0.5);
+    /* Responsive Footer */
+    footer {
+      text-align: center;
       padding: 1rem;
-      border-radius: 10px;
+      background: #1f2937;
+      color: #f9fafb;
+      font-size: 0.9rem;
+    }
+    /* Section Styles */
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
+  
+  <!-- Navigation Bar -->
+  <header class="nav-container">
+    <nav class="nav-bar">
+      <ul id="tabs">
+        <li class="active" data-tab="home">Home</li>
+        <li data-tab="about">About</li>
+        <li data-tab="portfolio">Portfolio</li>
+        <li data-tab="contact">Contact</li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="games-container">
-    <h1>Games</h1>
-    <!-- Navigation Menu for 5 Games -->
-    <ul class="games-menu">
-      <li class="active" data-game="game1">Retro Space Shooter</li>
-      <li data-game="game2">Platform Adventure</li>
-      <li data-game="game3">Puzzle Master</li>
-      <li data-game="game4">3D Maze Runner</li>
-      <li data-game="game5">Racing Thunder</li>
-    </ul>
+  <!-- Main Content Container -->
+  <main class="page-container">
+    <!-- Home Tab -->
+    <section id="home" class="tab-content active">
+      <h1>Welcome to My Amazing Site!</h1>
+      <p>This website is built for speed and smooth navigation. Enjoy exploring the various sections: from a heartfelt welcome to a deep dive into projects, and more!</p>
+    </section>
+    
+    <!-- About Tab -->
+    <section id="about" class="tab-content">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate developer crafting innovative solutions. This site is a showcase of my work—games, coding, creative projects, and everything fun in between.</p>
+    </section>
+    
+    <!-- Portfolio Tab -->
+    <section id="portfolio" class="tab-content">
+      <h2>Portfolio</h2>
+      <p>Check out a curated collection of projects including games, applications, and coding experiments. Each piece reflects creativity, passion, and attention to detail.</p>
+      <ul>
+        <li>Game: Retro Space Shooter</li>
+        <li>App: Task Automation Suite</li>
+        <li>Experiment: 3D Maze Runner</li>
+        <li>Project: Interactive Coding Tutorials</li>
+      </ul>
+    </section>
+    
+    <!-- Contact Tab -->
+    <section id="contact" class="tab-content">
+      <h2>Contact Me</h2>
+      <p>Want to collaborate or chat about coding, games, or fun projects? Reach out via email at <a href="mailto:kiyan@example.com">kiyan@example.com</a> or connect on social media!</p>
+    </section>
+  </main>
 
-    <!-- Game 1: Retro Space Shooter (2D Canvas) -->
-    <div id="game1" class="game-section active">
-      <div class="game-description">
-        <h2>Retro Space Shooter</h2>
-        <p>Command your spaceship, dodge enemy fire, and blast incoming asteroids in this classic 2D shooter. Use arrow keys to move and the space bar to fire lasers!</p>
-      </div>
-      <canvas id="canvas1" class="game-canvas" width="600" height="400"></canvas>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Kiyan Scripter. Crafted with passion and code.</p>
+  </footer>
 
-    <!-- Game 2: Platform Adventure (2D Platformer) -->
-    <div id="game2" class="game-section">
-      <div class="game-description">
-        <h2>Platform Adventure</h2>
-        <p>Jump, run, and explore pixelated worlds! Control your hero through levels filled with obstacles and hidden paths. Arrow keys to move, and press space to jump.</p>
-      </div>
-      <canvas id="canvas2" class="game-canvas" width="600" height="400"></canvas>
-    </div>
-
-    <!-- Game 3: Puzzle Master (Tile Matching Puzzle) -->
-    <div id="game3" class="game-section">
-      <div class="game-description">
-        <h2>Puzzle Master</h2>
-        <p>Solve intricate puzzles by matching tiles in just the right order. Think fast and plan your moves to clear the board in this brain-teasing challenge!</p>
-      </div>
-      <canvas id="canvas3" class="game-canvas" width="600" height="400"></canvas>
-    </div>
-
-    <!-- Game 4: 3D Maze Runner (3D Maze using Three.js) -->
-    <div id="game4" class="game-section">
-      <div class="game-description">
-        <h2>3D Maze Runner</h2>
-        <p>Step into the shoes of an explorer in a 3D labyrinth. Use your wit and reflexes to navigate the maze. Use WASD for movement and the mouse to look around!</p>
-      </div>
-      <div id="canvas4-container" style="width:600px; height:400px; margin: auto; border:2px solid #00ffff;"></div>
-    </div>
-
-    <!-- Game 5: Racing Thunder (Top-down 2D Racer) -->
-    <div id="game5" class="game-section">
-      <div class="game-description">
-        <h2>Racing Thunder</h2>
-        <p>Get behind the wheel in this top-down 2D racing game. Steer your car at breakneck speeds, dodge obstacles, and beat the clock to win!</p>
-      </div>
-      <canvas id="canvas5" class="game-canvas" width="600" height="400"></canvas>
-    </div>
-  </div>
-
-  <!-- JavaScript for Tab Navigation and Game Prototypes -->
+  <!-- JavaScript for Tab Navigation -->
   <script>
-    // Tab switching logic
-    const menuItems = document.querySelectorAll('.games-menu li');
-    const gameSections = document.querySelectorAll('.game-section');
-    menuItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Remove active class from all menu items
-        menuItems.forEach(i => i.classList.remove('active'));
-        // Add active class to the clicked item
-        item.classList.add('active');
-        // Hide all game sections
-        gameSections.forEach(section => section.classList.remove('active'));
-        // Show the selected game section
-        document.getElementById(item.getAttribute('data-game')).classList.add('active');
+    const tabs = document.querySelectorAll('#tabs li');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to the clicked tab and its content
+        tab.classList.add('active');
+        const activeTab = document.getElementById(tab.getAttribute('data-tab'));
+        activeTab.classList.add('active');
       });
     });
-
-    /* ---------- Game 1: Retro Space Shooter ---------- */
-    (function() {
-      const canvas = document.getElementById('canvas1');
-      const ctx = canvas.getContext('2d');
-      let ship = { x: canvas.width / 2 - 15, y: canvas.height - 60, width: 30, height: 30 };
-      let bullets = [];
-      let enemies = [];
-      
-      // Basic keyboard controls
-      const keys = {};
-      window.addEventListener('keydown', e => keys[e.key] = true);
-      window.addEventListener('keyup', e => keys[e.key] = false);
-
-      // Game loop at 60 fps
-      function gameLoop1() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // Update ship position
-        if(keys.ArrowLeft && ship.x > 0) ship.x -= 5;
-        if(keys.ArrowRight && ship.x + ship.width < canvas.width) ship.x += 5;
-        
-        // Fire bullet on space bar
-        if(keys[' '] && bullets.length < 5) { // limit bullets on screen
-          bullets.push({ x: ship.x + ship.width / 2 - 2, y: ship.y, width: 4, height: 10 });
-          keys[' '] = false; // prevent auto-fire
-        }
-        
-        // Move bullets
-        bullets = bullets.filter(bullet => {
-          bullet.y -= 7;
-          return bullet.y > 0;
-        });
-        
-        // Simple enemy spawn
-        if(Math.random() < 0.02) {
-          enemies.push({ x: Math.random() * (canvas.width - 30), y: 0, width: 30, height: 30 });
-        }
-        enemies.forEach(enemy => enemy.y += 2);
-        enemies = enemies.filter(enemy => enemy.y < canvas.height);
-
-        // Draw ship
-        ctx.fillStyle = '#ff0';
-        ctx.fillRect(ship.x, ship.y, ship.width, ship.height);
-        // Draw bullets
-        ctx.fillStyle = '#0f0';
-        bullets.forEach(bullet => ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height));
-        // Draw enemies
-        ctx.fillStyle = '#f00';
-        enemies.forEach(enemy => ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height));
-        
-        requestAnimationFrame(gameLoop1);
-      }
-      gameLoop1();
-    })();
-
-    /* ---------- Game 2: Platform Adventure ---------- */
-    (function() {
-      const canvas = document.getElementById('canvas2');
-      const ctx = canvas.getContext('2d');
-      let player = { x: 50, y: canvas.height - 50, width: 30, height: 30, dy: 0, onGround: true };
-      const gravity = 0.8;
-      const jumpStrength = -15;
-      
-      // Keyboard controls
-      const keys = {};
-      window.addEventListener('keydown', e => keys[e.key] = true);
-      window.addEventListener('keyup', e => keys[e.key] = false);
-      
-      function gameLoop2() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Horizontal movement
-        if(keys.ArrowLeft && player.x > 0) player.x -= 5;
-        if(keys.ArrowRight && player.x + player.width < canvas.width) player.x += 5;
-        
-        // Jump
-        if(keys[' '] && player.onGround) {
-          player.dy = jumpStrength;
-          player.onGround = false;
-        }
-        
-        // Gravity effect
-        player.dy += gravity;
-        player.y += player.dy;
-        
-        // Floor collision
-        if(player.y + player.height > canvas.height) {
-          player.y = canvas.height - player.height;
-          player.dy = 0;
-          player.onGround = true;
-        }
-        
-        // Draw player
-        ctx.fillStyle = '#ff0';
-        ctx.fillRect(player.x, player.y, player.width, player.height);
-        
-        // Draw a simple platform
-        ctx.fillStyle = '#00ffff';
-        ctx.fillRect(200, canvas.height - 100, 200, 20);
-        
-        requestAnimationFrame(gameLoop2);
-      }
-      gameLoop2();
-    })();
-
-    /* ---------- Game 3: Puzzle Master (Tile Matching Puzzle) ---------- */
-    (function() {
-      const canvas = document.getElementById('canvas3');
-      const ctx = canvas.getContext('2d');
-      const cols = 4, rows = 4, tileSize = 100;
-      let board = [];
-      
-      // Initialize board with random colors (simulate tiles)
-      const colors = ['#ff0', '#f0f', '#0ff', '#fff', '#0f0', '#f00', '#00f', '#aaa'];
-      for(let r = 0; r < rows; r++){
-        for(let c = 0; c < cols; c++){
-          board.push(colors[Math.floor(Math.random() * colors.length)]);
-        }
-      }
-      
-      function drawPuzzle() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for(let r = 0; r < rows; r++){
-          for(let c = 0; c < cols; c++){
-            ctx.fillStyle = board[r * cols + c];
-            ctx.fillRect(c * tileSize, r * tileSize, tileSize - 2, tileSize - 2);
-          }
-        }
-      }
-      drawPuzzle();
-      // In a full game, you'd add tile swapping and matching logic.
-    })();
-
-    /* ---------- Game 4: 3D Maze Runner using Three.js ---------- */
-    (function() {
-      // Set up Three.js scene
-      const container = document.getElementById('canvas4-container');
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      container.appendChild(renderer.domElement);
-      
-      // Create a simple maze floor and walls
-      const floorGeometry = new THREE.PlaneGeometry(50, 50);
-      const floorMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffff, side: THREE.DoubleSide });
-      const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-      floor.rotation.x = Math.PI / 2;
-      scene.add(floor);
-      
-      // Add simple wall cubes (for demonstration)
-      for(let i = -20; i <= 20; i+=10) {
-        const wallGeometry = new THREE.BoxGeometry(1, 5, 10);
-        const wallMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-        const wall = new THREE.Mesh(wallGeometry, wallMaterial);
-        wall.position.set(i, 2.5, 0);
-        scene.add(wall);
-      }
-      
-      camera.position.set(0, 10, 20);
-      camera.lookAt(0, 0, 0);
-      
-      function animate4() {
-        requestAnimationFrame(animate4);
-        // Rotate floor for a dynamic effect (demo only)
-        floor.rotation.z += 0.001;
-        renderer.render(scene, camera);
-      }
-      animate4();
-    })();
-
-    /* ---------- Game 5: Racing Thunder (Top-down 2D Racer) ---------- */
-    (function() {
-      const canvas = document.getElementById('canvas5');
-      const ctx = canvas.getContext('2d');
-      let car = { x: canvas.width / 2 - 15, y: canvas.height - 70, width: 30, height: 50 };
-      const keys = {};
-      window.addEventListener('keydown', e => keys[e.key] = true);
-      window.addEventListener('keyup', e => keys[e.key] = false);
-      
-      function gameLoop5() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Move car left/right with arrow keys
-        if(keys.ArrowLeft && car.x > 0) car.x -= 5;
-        if(keys.ArrowRight && car.x + car.width < canvas.width) car.x += 5;
-        
-        // Draw the car
-        ctx.fillStyle = '#ff0';
-        ctx.fillRect(car.x, car.y, car.width, car.height);
-        
-        // Draw track boundaries for a basic race environment
-        ctx.strokeStyle = '#00ffff';
-        ctx.lineWidth = 5;
-        ctx.strokeRect(50, 0, canvas.width - 100, canvas.height);
-        
-        requestAnimationFrame(gameLoop5);
-      }
-      gameLoop5();
-    })();
   </script>
-
 </body>
 </html>
