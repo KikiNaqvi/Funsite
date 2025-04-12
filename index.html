@@ -1,173 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amazing Fast Website</title>
-  <!-- Google Font for a modern look -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PornSketch: The Art of Text & Drawings</title>
+  <!-- Using a clean sans-serif font for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset and Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Global Styles */
     body {
+      margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f3f4f6;
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000;
+      border-bottom: 1px solid #444;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
+    header .logo {
+      width: 200px;
     }
-    /* Navigation Bar */
-    .nav-container {
-      background: #1f2937;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    nav {
+      margin-left: auto;
     }
-    .nav-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-    }
-    .nav-bar ul {
+    nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 15px;
+      padding: 0;
     }
-    .nav-bar li {
+    nav ul li {
       cursor: pointer;
-      padding: 0.5rem 1rem;
-      color: #f9fafb;
-      font-weight: 700;
-      transition: background 0.3s ease, color 0.3s ease;
-      border-radius: 5px;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
-    .nav-bar li:hover,
-    .nav-bar li.active {
-      background: #f9fafb;
-      color: #1f2937;
+    /* Mimic the signature red accent */
+    nav ul li:hover, 
+    nav ul li.active {
+      background-color: #e50914;
     }
-    /* Page Container */
-    .page-container {
-      flex: 1;
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 0.5s forwards;
+    .content {
+      padding: 20px;
     }
-    /* Fade in Animation */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    /* Tab Content Sections */
     .tab-content {
       display: none;
+      animation: fadeIn 0.5s ease forwards;
     }
     .tab-content.active {
       display: block;
-      animation: fadeIn 0.5s forwards;
     }
-    /* Responsive Footer */
-    footer {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Parody elements: Drawings & NSFW-text blocks */
+    .drawing {
+      border: 2px dashed #e50914;
+      padding: 20px;
+      margin: 10px 0;
       text-align: center;
-      padding: 1rem;
-      background: #1f2937;
-      color: #f9fafb;
+      font-style: italic;
+      color: #e50914;
+    }
+    .nsfw-text {
+      background-color: #222;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid #e50914;
+    }
+    footer {
+      background-color: #000;
+      border-top: 1px solid #444;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       font-size: 0.9rem;
-    }
-    /* Section Styles */
-    h1, h2 {
-      margin-bottom: 1rem;
-    }
-    p {
-      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  
-  <!-- Navigation Bar -->
-  <header class="nav-container">
-    <nav class="nav-bar">
-      <ul id="tabs">
+  <!-- Header with Logo and Navigation -->
+  <header>
+    <!-- Logo: Replace with an actual image or text logo if desired -->
+    <img src="https://via.placeholder.com/200x50?text=PornSketch" class="logo" alt="PornSketch Logo">
+    <nav>
+      <ul id="nav-tabs">
         <li class="active" data-tab="home">Home</li>
+        <li data-tab="drawings">Drawings</li>
+        <li data-tab="texts">Texts</li>
         <li data-tab="about">About</li>
-        <li data-tab="portfolio">Portfolio</li>
-        <li data-tab="contact">Contact</li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="page-container">
+  <!-- Main Content Area with Tabs -->
+  <div class="content">
     <!-- Home Tab -->
     <section id="home" class="tab-content active">
-      <h1>Welcome to My Amazing Site!</h1>
-      <p>This website is built for speed and smooth navigation. Enjoy exploring the various sections: from a heartfelt welcome to a deep dive into projects, and more!</p>
+      <h1>Welcome to PornSketch</h1>
+      <p>The ultimate parody hub where NSFW aesthetics meet artistic expression—all through evocative text and playful drawings. No explicit videos here, just creative fun!</p>
     </section>
-    
+
+    <!-- Drawings Tab -->
+    <section id="drawings" class="tab-content">
+      <h2>Drawings</h2>
+      <div class="drawing">
+        <p>[A tantalizing, abstract sketch that teases the imagination]</p>
+      </div>
+      <div class="drawing">
+        <p>[A humorous doodle featuring playful curves and lines]</p>
+      </div>
+      <div class="drawing">
+        <p>[A minimalistic design that hints at seductive art]</p>
+      </div>
+    </section>
+
+    <!-- Texts Tab -->
+    <section id="texts" class="tab-content">
+      <h2>Texts</h2>
+      <div class="nsfw-text">
+        <p>"In the midnight hush, every word becomes a caress, every phrase a stolen secret..."</p>
+      </div>
+      <div class="nsfw-text">
+        <p>"Barefaced and raw, these verses evoke a forbidden allure where passion meets art."</p>
+      </div>
+      <div class="nsfw-text">
+        <p>"A literary dance of seduction, each stanza teases the senses and ignites the imagination."</p>
+      </div>
+    </section>
+
     <!-- About Tab -->
     <section id="about" class="tab-content">
-      <h2>About Me</h2>
-      <p>Hello! I'm a passionate developer crafting innovative solutions. This site is a showcase of my work—games, coding, creative projects, and everything fun in between.</p>
+      <h2>About PornSketch</h2>
+      <p>PornSketch is a tongue-in-cheek homage to the NSFW world—styled like the big names but focused purely on artistic text and drawing-type images. Enjoy the playful vibe, and remember: it’s all for fun!</p>
     </section>
-    
-    <!-- Portfolio Tab -->
-    <section id="portfolio" class="tab-content">
-      <h2>Portfolio</h2>
-      <p>Check out a curated collection of projects including games, applications, and coding experiments. Each piece reflects creativity, passion, and attention to detail.</p>
-      <ul>
-        <li>Game: Retro Space Shooter</li>
-        <li>App: Task Automation Suite</li>
-        <li>Experiment: 3D Maze Runner</li>
-        <li>Project: Interactive Coding Tutorials</li>
-      </ul>
-    </section>
-    
-    <!-- Contact Tab -->
-    <section id="contact" class="tab-content">
-      <h2>Contact Me</h2>
-      <p>Want to collaborate or chat about coding, games, or fun projects? Reach out via email at <a href="mailto:kiyan@example.com">kiyan@example.com</a> or connect on social media!</p>
-    </section>
-  </main>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Kiyan Scripter. Crafted with passion and code.</p>
+    <p>&copy; 2025 PornSketch. All Rights Reserved. (For fun only!)</p>
   </footer>
 
-  <!-- JavaScript for Tab Navigation -->
+  <!-- JavaScript for Tab Functionality -->
   <script>
-    const tabs = document.querySelectorAll('#tabs li');
+    const navTabs = document.querySelectorAll('#nav-tabs li');
     const tabContents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
+    
+    navTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs and contents
-        tabs.forEach(t => t.classList.remove('active'));
+        // Remove active classes from tabs and contents
+        navTabs.forEach(item => item.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
         
-        // Add active class to the clicked tab and its content
+        // Activate the clicked tab and matching content
         tab.classList.add('active');
-        const activeTab = document.getElementById(tab.getAttribute('data-tab'));
-        activeTab.classList.add('active');
+        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
       });
     });
   </script>
