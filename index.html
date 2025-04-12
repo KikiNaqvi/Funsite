@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ultimate Gaming Zone</title>
+    <title>Ultimate Gaming & Fun Zone</title>
     <style>
         * {
             margin: 0;
@@ -13,37 +13,40 @@
         }
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #1a1a1a, #333333);
+            background: linear-gradient(45deg, #f7a8b8, #ff6f61, #7d4dff);
             color: white;
             overflow-x: hidden;
         }
         header {
-            background-color: #000;
-            padding: 20px 0;
+            background-color: #2c3e50;
+            padding: 30px;
             text-align: center;
-            font-size: 2.5em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 3em;
+            color: #ecf0f1;
+            font-family: 'Comic Sans MS', cursive;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
         header h1 {
             font-family: 'Arial', sans-serif;
-            letter-spacing: 2px;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #222;
+            background-color: #8e44ad;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         nav a {
             color: #fff;
-            padding: 15px 30px;
+            padding: 20px 40px;
             text-decoration: none;
             text-align: center;
             flex-grow: 1;
             transition: background-color 0.3s ease;
+            font-size: 1.3em;
         }
         nav a:hover {
             background-color: #4CAF50;
+            transform: scale(1.05);
         }
         .content {
             padding: 50px 20px;
@@ -51,15 +54,16 @@
             min-height: 400px;
         }
         .gaming-img {
-            width: 100%;
+            width: 80%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         footer {
-            background-color: #000;
+            background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px;
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -74,10 +78,10 @@
         .tab-description {
             font-size: 1.3em;
             margin-top: 20px;
-            color: #ccc;
+            color: #fff;
         }
         .hero-section {
-            background-image: url('https://via.placeholder.com/1500x600'); /* Change to a gaming background */
+            background-image: url('https://via.placeholder.com/1500x600/ff6f61/ffffff?text=Gaming+Is+Life');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -89,17 +93,35 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
         .btn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            padding: 10px 25px;
+            background-color: #ff6f61;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             color: white;
             font-size: 1.2em;
             cursor: pointer;
             margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background-color: #45a049;
+            background-color: #f39c12;
+        }
+        .fun-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .fun-images img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .fun-images img:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -107,7 +129,7 @@
 
     <!-- HEADER -->
     <header>
-        Ultimate Gaming Zone
+        Ultimate Gaming & Fun Zone
     </header>
 
     <!-- NAVIGATION -->
@@ -120,36 +142,55 @@
 
     <!-- HERO SECTION -->
     <div class="hero-section">
-        Welcome to the Ultimate Gaming Experience!
+        Welcome to the Ultimate Gaming & Fun Zone! 🎮🎉
     </div>
 
     <!-- CONTENT -->
     <div class="content">
+        <!-- Home Tab -->
         <div id="home" class="tab-content active">
-            <h2>Welcome to the Home Page!</h2>
-            <p class="tab-description">The best place to kick off your gaming adventure. Check out all the cool features we offer!</p>
-            <button class="btn">Explore More</button>
+            <h2>Welcome to the Ultimate Gaming Zone!</h2>
+            <p class="tab-description">Here, gaming is life and fun never ends. Get ready for a wild ride!</p>
+            <button class="btn">Join The Fun</button>
         </div>
+        
+        <!-- Gaming Tab -->
         <div id="gaming" class="tab-content">
-            <h2>Gaming</h2>
-            <p class="tab-description">Dive into the world of gaming! From epic games to tips and tricks, we've got it all.</p>
-            <img src="https://via.placeholder.com/800x400" class="gaming-img" alt="gaming">
+            <h2>Gaming Zone</h2>
+            <p class="tab-description">Explore the latest games, epic strategies, and gaming tips!</p>
+            <img src="https://via.placeholder.com/800x400/7d4dff/ffffff?text=Epic+Gaming+Adventure" class="gaming-img" alt="Epic Gaming">
         </div>
+        
+        <!-- Cool Stuff Tab -->
         <div id="cool" class="tab-content">
             <h2>Cool Stuff</h2>
-            <p class="tab-description">Discover some cool gaming merch, gadgets, and gear that will level up your setup!</p>
-            <img src="https://via.placeholder.com/800x400" class="gaming-img" alt="cool stuff">
+            <p class="tab-description">Check out some amazing gaming merchandise and epic gadgets.</p>
+            <img src="https://via.placeholder.com/800x400/ffb3b3/ffffff?text=Gaming+Merch" class="gaming-img" alt="Gaming Merch">
         </div>
+        
+        <!-- Fun Stuff Tab -->
+        <div id="fun" class="tab-content">
+            <h2>Fun Stuff 😜</h2>
+            <p class="tab-description">Laugh, smile, and enjoy some of the weirdest, funniest, and cutest images we could find!</p>
+            <div class="fun-images">
+                <img src="https://via.placeholder.com/300x300/ffcc00/ffffff?text=Dog+Laugh" alt="Dog Laugh">
+                <img src="https://via.placeholder.com/300x300/ffcc00/ffffff?text=Cat+Meme" alt="Cat Meme">
+                <img src="https://via.placeholder.com/300x300/ffcc00/ffffff?text=Funny+Human" alt="Funny Human">
+                <img src="https://via.placeholder.com/300x300/ffcc00/ffffff?text=Funny+Poop" alt="Funny Poop">
+            </div>
+        </div>
+        
+        <!-- More Tab -->
         <div id="more" class="tab-content">
-            <h2>More</h2>
-            <p class="tab-description">Find additional resources and links to enhance your gaming experience even further!</p>
-            <button class="btn">Visit Resources</button>
+            <h2>More Fun Stuff!</h2>
+            <p class="tab-description">Find even more cool gaming resources and links to enhance your gaming experience!</p>
+            <button class="btn">Explore More</button>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        &copy; 2025 Ultimate Gaming Zone. All rights reserved.
+        &copy; 2025 Ultimate Gaming & Fun Zone. All rights reserved.
     </footer>
 
     <script>
@@ -157,34 +198,27 @@
         const homeTab = document.getElementById('home-tab');
         const gamingTab = document.getElementById('gaming-tab');
         const coolTab = document.getElementById('cool-tab');
+        const funTab = document.getElementById('fun-tab');
         const moreTab = document.getElementById('more-tab');
 
         const homeContent = document.getElementById('home');
         const gamingContent = document.getElementById('gaming');
         const coolContent = document.getElementById('cool');
+        const funContent = document.getElementById('fun');
         const moreContent = document.getElementById('more');
 
-        homeTab.addEventListener('click', () => {
-            switchTab(homeContent);
-        });
-
-        gamingTab.addEventListener('click', () => {
-            switchTab(gamingContent);
-        });
-
-        coolTab.addEventListener('click', () => {
-            switchTab(coolContent);
-        });
-
-        moreTab.addEventListener('click', () => {
-            switchTab(moreContent);
-        });
+        homeTab.addEventListener('click', () => switchTab(homeContent));
+        gamingTab.addEventListener('click', () => switchTab(gamingContent));
+        coolTab.addEventListener('click', () => switchTab(coolContent));
+        funTab.addEventListener('click', () => switchTab(funContent));
+        moreTab.addEventListener('click', () => switchTab(moreContent));
 
         function switchTab(content) {
             // Hide all content
             homeContent.classList.remove('active');
             gamingContent.classList.remove('active');
             coolContent.classList.remove('active');
+            funContent.classList.remove('active');
             moreContent.classList.remove('active');
 
             // Show the selected content
