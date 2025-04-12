@@ -3,39 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hi Kiyan!</title>
-
-  <!-- 🚀 Cool Font from Google Fonts -->
+  <title>Kiyan's Fun World</title>
+  <!-- Google Font: 'Press Start 2P' -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+  
   <style>
+    /* General Styles */
     body {
+      font-family: 'Press Start 2P', cursive;
       margin: 0;
-      height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    h1, h2 {
+      text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #000000cc;
+      padding: 1rem;
+      z-index: 999;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
       color: #00ffff;
-      font-family: 'Press Start 2P', cursive;
-      text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
-      overflow: hidden;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      text-shadow: 0 0 4px #fff, 0 0 8px #00ffff;
+      transition: 0.3s;
     }
 
-    h1 {
-      animation: pulse 2s infinite ease-in-out;
+    nav ul li a:hover {
+      color: #ffcc00;
+      text-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00;
+    }
+
+    /* Section Styles */
+    .home-section {
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin-top: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    }
+
+    .home-section h2 {
+      font-size: 2.5rem;
+    }
+
+    .home-section p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 1rem 0;
+    }
+
+    .tabs-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .tab-button {
+      background-color: #203a43;
+      color: #00ffff;
+      padding: 1rem 2rem;
+      margin: 0 1rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+
+    .tab-button:hover {
+      background-color: #00ffff;
+      color: black;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem;
+      background-color: #000000cc;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
       text-align: center;
-      font-size: 2rem;
-    }
-
-    @keyframes pulse {
-      0%   { transform: scale(1); opacity: 1; }
-      50%  { transform: scale(1.05); opacity: 0.9; }
-      100% { transform: scale(1); opacity: 1; }
+      font-size: 1rem;
     }
   </style>
 </head>
+
 <body>
-  <h1>Hi Kiyan 👾</h1>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#coding">Coding</a></li>
+      <li><a href="#more">More</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="home-section">
+    <h1>Welcome to Kiyan's Fun World!</h1>
+    <h2>Games, Coding, and Fun Stuff!</h2>
+    <p>This website is a showcase of my personal projects, including some fun games, coding tutorials, and other cool stuff. Everything here was made by me, Kiyan!</p>
+  </section>
+
+  <!-- Tabs Section -->
+  <div class="tabs-section">
+    <button class="tab-button" id="games">Games</button>
+    <button class="tab-button" id="coding">Coding</button>
+    <button class="tab-button" id="more">More</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with 💻 by Kiyan | All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
