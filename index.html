@@ -5,487 +5,246 @@
   <title>SparxNow Cheat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Elegant fonts: Poppins for headings and Roboto for body text -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     html, body {
       height: 100%;
       font-family: 'Roboto', sans-serif;
-      background: #121212;
+      background: linear-gradient(135deg, #111, #1a1a1a);
       color: #e0e0e0;
-      line-height: 1.6;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
     }
-    
+
     a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
     }
-    
+
     a:hover {
       color: #ffffff;
+      transform: scale(1.05);
     }
-    
-    /* Container Utility */
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 0;
     }
-    
-    /* Navbar */
+
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #1a1a1a;
+      background: #212121;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 999;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
-    
+
     nav .logo {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #ffffff;
-      letter-spacing: 1px;
     }
-    
+
     nav .menu {
       display: flex;
       gap: 1.5rem;
     }
-    
+
     nav .menu a {
-      color: #e0e0e0;
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
-    
-    nav .menu a:hover {
-      color: #ffffff;
-    }
-    
-    /* Hero Section */
+
     .hero {
-      position: relative;
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      padding: 3rem 2rem;
-      background: linear-gradient(135deg, #1e1e1e, #121212);
-      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(135deg, #202020, #2a2a2a);
     }
-    
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 200%;
-      height: 100%;
-      background: radial-gradient(rgba(255,255,255,0.05), transparent 60%);
-      animation: shift 10s linear infinite;
-      pointer-events: none;
-    }
-    
-    @keyframes shift {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50px); }
-    }
-    
+
     .hero h1 {
+      font-size: 3rem;
       font-family: 'Poppins', sans-serif;
-      font-size: 3.2rem;
+      color: #fff;
       margin-bottom: 1rem;
-      color: #ffffff;
-      letter-spacing: 0.5px;
     }
-    
+
     .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
       max-width: 700px;
-      color: #b0b0b0;
-      margin-bottom: 2rem;
-      font-size: 1.15rem;
+      margin: 0 auto 2rem;
     }
-    
-    /* Unified Button for Hero & Pricing with Gradient */
+
     .btn-group {
       display: flex;
+      justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
     }
-    
+
     .btn {
       background: linear-gradient(135deg, #4e60ff, #2d38e6);
       color: #fff;
-      padding: 0.9rem 1.6rem;
-      border-radius: 4px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 8px rgba(78, 96, 255, 0.4);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(78, 96, 255, 0.4);
     }
-    
+
     .btn:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 6px 14px rgba(78, 96, 255, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(78, 96, 255, 0.6);
     }
-    
-    /* Bookworks Section */
-    .bookworks {
-      background: #1a1a1a;
-      padding: 3rem 0;
-    }
-    
-    .bookworks .content {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .bookworks .content h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .bookworks .content p {
-      margin-bottom: 1rem;
-      color: #c0c0c0;
-      font-size: 1rem;
-    }
-    
-    /* Features Section */
-    .features {
-      background: #181818;
-      padding: 3rem 0;
-    }
-    
-    .features .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      padding: 0 2rem;
-    }
-    
-    .feature-box {
-      background: #242424;
-      border-radius: 6px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s;
-    }
-    
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-    
-    .feature-box h3 {
-      color: #ffffff;
-      margin-bottom: 1rem;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.3rem;
-    }
-    
-    .feature-box p {
-      font-size: 0.95rem;
-      color: #b0b0b0;
-    }
-    
-    /* Pricing & CTA Section */
+
     .pricing {
-      background: #1a1a1a;
+      background: #1e1e1e;
+      padding: 4rem 1rem;
       text-align: center;
-      padding: 3rem 1rem;
     }
-    
+
     .pricing h2 {
+      font-size: 2.5rem;
       font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem;
+      color: #fff;
       margin-bottom: 1rem;
-      color: #ffffff;
     }
-    
-    .pricing p {
-      margin-bottom: 2rem;
-      color: #c0c0c0;
-      font-size: 1.05rem;
-    }
-    
+
     .price-options {
       display: flex;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
     }
-    
+
     .price-card {
-      background: #242424;
-      border-radius: 8px;
-      padding: 1.5rem 2rem;
+      background: #292929;
+      border-radius: 10px;
+      padding: 2rem;
       width: 280px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s;
     }
-    
+
     .price-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-8px);
     }
-    
+
     .price-card h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-    
-    .price-card .price {
-      font-size: 2.2rem;
-      color: #ffffff;
-      margin: 0.5rem 0 1rem;
-    }
-    
-    .buy-btn {
-      background: linear-gradient(135deg, #4e60ff, #2d38e6);
+      font-size: 1.5rem;
       color: #fff;
-      padding: 0.8rem 1.4rem;
-      border-radius: 4px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: background 0.3s, transform 0.3s;
-      box-shadow: 0 4px 8px rgba(78, 96, 255, 0.4);
-      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      color: #4e60ff;
+      margin-bottom: 1rem;
+    }
+
+    .buy-btn {
       display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: #5865F2;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: transform 0.3s ease;
     }
-    
+
     .buy-btn:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 6px 14px rgba(78, 96, 255, 0.6);
+      transform: scale(1.05);
     }
-    
-    /* Footer */
+
     footer {
       background: #1a1a1a;
       text-align: center;
       padding: 1rem;
-      color: #888;
-      font-size: 0.8rem;
+      color: #aaa;
     }
-    
-    /* Minimal Invite Modal (Integrated Invite Page) */
+
     .modal {
       display: none;
       position: fixed;
-      z-index: 200;
-      left: 0;
+      z-index: 1000;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
-      padding: 1rem;
     }
-    
+
     .modal-content {
-      background: #1a1a1a;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 600px;
+      background: #2c2c2c;
       padding: 2rem;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.9);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.8);
     }
-    
-    /* Modal Logo Image */
-    .modal-content .logo {
-      width: 120px;
-      height: auto;
-      margin: 0 auto;
+
+    .modal-content img {
+      width: 100px;
+      margin-bottom: 1rem;
     }
-    
-    .modal-content .description {
-      font-size: 1.05rem;
-      color: #cccccc;
-      line-height: 1.4;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-    
-    .modal-content .invite-btn {
-      background: #5865F2;
-      color: #fff;
+
+    .invite-btn {
+      margin-top: 1rem;
+      background: #7289DA;
       padding: 0.8rem 2rem;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(88,101,242,0.4);
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
       display: inline-block;
     }
-    
-    .modal-content .invite-btn:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 6px 14px rgba(88,101,242,0.6);
+
+    .invite-btn:hover {
+      transform: scale(1.05);
     }
-    
+
     .close-btn {
       position: absolute;
       top: 10px;
-      right: 15px;
-      font-size: 1.5rem;
-      color: #888;
-      cursor: pointer;
-    }
-    
-    .close-btn:hover {
+      right: 20px;
       color: #fff;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      nav .menu {
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-      .price-options {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
+      font-size: 1.5rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
   <nav>
     <div class="logo">SparxNow</div>
     <div class="menu">
-      <a href="#features">features</a>
-      <a href="#pricing">pricing</a>
-      <a href="#sparxnow">sparxnow</a>
+      <a href="#pricing">Pricing</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>SparxNow Cheat</h1>
-    <p>
-      The ultimate hack for mastering your Sparx homework—fast, smooth, and smart.
-    </p>
-    <!-- Single Join Discord button -->
+    <h1>Unlock Sparx Power</h1>
+    <p>Join the smartest students and speedrun Sparx like a boss with our ultimate tool!</p>
     <div class="btn-group">
       <a href="#" class="btn" id="discordHeroBtn">Join Discord</a>
     </div>
   </section>
 
-  <!-- Bookworks Section -->
-  <section id="sparxnow" class="bookworks">
-    <div class="container">
-      <div class="content">
-        <h2>Bookworks</h2>
-        <p>
-          SparxNow redefines bookwork capturing with an efficient system that records almost every answer in an easily accessible format.
-        </p>
-        <p><strong>One of a kind:</strong> The only product on the market.</p>
-        <p><strong>Indubitably fast solver:</strong> Dependable AutoBookworks™</p>
-        <p><strong>Extraordinary Customization:</strong> Tailor it to your style.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2 class="section-title">What is SparxNow?</h2>
-    <div class="container grid">
-      <div class="feature-box">
-        <h3>At Its Core</h3>
-        <p>
-          A powerful math solver Chrome extension engineered for utmost convenience when tackling SparxMaths. Three+ years of perfecting school cheats.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Secure</h3>
-        <p>
-          Our system uses obfuscation and encryption to safeguard our servers and your computer.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Private</h3>
-        <p>
-          GDPR compliant and only stores essential data to identify you and fix bugs.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Updates</h3>
-        <p>
-          Purchase or subscribe once and receive lifetime updates.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Care for Users</h3>
-        <p>
-          We value every customer; your feedback drives our growth and improvements.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Bookworks</h3>
-        <p>
-          Enjoy a lightweight solution for auto-saving bookworks that improves with every update.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Support</h3>
-        <p>
-          Our team is available 24/7 on Discord to assist with your cheat needs.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Free Trial</h3>
-        <p>
-          Experience a 3-day free trial by joining our Discord community.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3>Themes</h3>
-        <p>
-          Enjoy beautiful, handcrafted themes created with our extensive CSS expertise.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing & CTA Section -->
   <section id="pricing" class="pricing">
-    <h2>Choose Your Plan</h2>
-    <p>Choose from our affordable pricing options—no hidden fees, just a smooth experience.</p>
+    <h2>Get Access Now</h2>
     <div class="price-options">
       <div class="price-card">
         <h3>Monthly</h3>
@@ -500,50 +259,41 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; <span id="year"></span> SparxNow. All Rights Reserved.
+    &copy; <span id="year"></span> SparxNow. All rights reserved.
   </footer>
 
-  <!-- Minimal Invite Modal -->
   <div id="discordModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
-      <!-- Grey Bot Logo Image -->
-      <img src="sparxnow-logo-grey.png" alt="SparxNow Logo" class="logo">
-      <div class="description">
-        Welcome to SparxNow! Join our friendly Discord community to enjoy your free trial and access our powerful cheat tool.
-      </div>
+      <img src="sparxnow.png" alt="SparxNow Logo">
+      <p>Join our Discord to access the cheat and connect with our community!</p>
       <a href="https://discord.gg/2H6nrFYH" target="_blank" class="invite-btn">Join Discord</a>
     </div>
   </div>
 
-  <!-- JavaScript for Modal Popup -->
   <script>
-    // Update footer year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Get modal elements
-    const buyBtns = [ 
+
+    const modal = document.getElementById('discordModal');
+    const closeModal = document.getElementById('closeModal');
+    const buttons = [
       document.getElementById('buyMonthly'),
       document.getElementById('buyLifetime'),
       document.getElementById('discordHeroBtn')
     ];
-    const modal = document.getElementById('discordModal');
-    const closeModal = document.getElementById('closeModal');
-    
-    // Open modal when clicking any relevant button
-    buyBtns.forEach(btn => {
+
+    buttons.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         modal.style.display = 'flex';
       });
     });
-    
-    // Close modal on click of the close button or outside the modal content
+
     closeModal.addEventListener('click', () => {
       modal.style.display = 'none';
     });
+
     window.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
