@@ -1,293 +1,417 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: #0e0e0e url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-    color: #f2f2f2;
-    scroll-behavior: smooth;
-    background-attachment: fixed;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: 0.3s ease all;
-  }
-
-  a:hover {
-    color: #ffffff;
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1a1a1a;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-  }
-
-  nav .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    color: #ffffff;
-  }
-
-  nav .menu {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  nav .menu a {
-    color: #ccc;
-    font-weight: 500;
-    font-size: 0.95rem;
-  }
-
-  .hero {
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #131313;
-    padding: 3rem 2rem;
-    position: relative;
-  }
-
-  .hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3.2rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-  }
-
-  .hero p {
-    max-width: 700px;
-    color: #bbb;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-  }
-
-  .btn-group {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn {
-    background: #5865F2; /* Discord blue */
-    color: white;
-    padding: 0.9rem 1.6rem;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(88, 101, 242, 0.6);
-  }
-
-  .btn-grey {
-    background-color: #333;
-    color: white;
-  }
-
-  .btn-grey:hover {
-    background-color: #444;
-    transform: scale(1.03);
-  }
-
-  .bookworks,
-  .pricing {
-    background: #181818;
-    padding: 3rem 0;
-  }
-
-  .bookworks h2,
-  .pricing h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    color: #f0f0f0;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .bookworks p,
-  .pricing p {
-    color: #aaa;
-    text-align: center;
-    margin: 0.5rem auto;
-    max-width: 700px;
-  }
-
-  .features {
-    background: #121212;
-    padding: 3rem 0;
-  }
-
-  .features .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-
-  .feature-box {
-    background: #1b1b1b;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-
-  .feature-box:hover {
-    transform: translateY(-6px);
-  }
-
-  .feature-box h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #e0e0e0;
-    margin-bottom: 1rem;
-  }
-
-  .feature-box p {
-    color: #bbb;
-    font-size: 0.95rem;
-  }
-
-  .price-options {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .price-card {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-
-  .price-card:hover {
-    transform: translateY(-6px);
-  }
-
-  .price-card h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #f0f0f0;
-  }
-
-  .price {
-    font-size: 2.2rem;
-    margin: 1rem 0;
-    color: #fff;
-  }
-
-  .buy-btn {
-    background: #5865F2;
-    color: white;
-    padding: 0.8rem 1.4rem;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .buy-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(88, 101, 242, 0.6);
-  }
-
-  footer {
-    background: #0f0f0f;
-    text-align: center;
-    padding: 1rem;
-    color: #777;
-    font-size: 0.85rem;
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal-content {
-    background: #1c1c1c;
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 600px;
-    text-align: center;
-    position: relative;
-  }
-
-  .modal-content .invite-btn {
-    background: #5865F2;
-    color: #fff;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-  }
-
-  .modal-content .invite-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(88, 101, 242, 0.6);
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    color: #999;
-    cursor: pointer;
-  }
-
-  .close-btn:hover {
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.4rem;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>SparxNow Cheat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .btn-group {
+
+    html, body {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2b2b3c 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: 0.3s ease all;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #7b2ff7, #f107a3);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    nav .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+
+    nav .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav .menu a {
+      color: #ffe8ff;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      padding: 3rem 2rem;
+      position: relative;
     }
-  }
-</style>
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #f8dfff;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn, .btn-grey {
+      padding: 0.9rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #fc466b, #3f5efb);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(252, 70, 107, 0.6);
+    }
+
+    .btn-grey {
+      background-color: #888;
+      color: white;
+    }
+
+    .btn-grey:hover {
+      background-color: #aaa;
+      transform: scale(1.03);
+    }
+
+    .bookworks {
+      background: #2b2b3c;
+      padding: 3rem 0;
+    }
+
+    .bookworks h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #ffcaff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .bookworks p {
+      color: #e0d4f7;
+      text-align: center;
+      margin: 0.5rem auto;
+      max-width: 700px;
+    }
+
+    .features {
+      background: linear-gradient(135deg, #141e30, #243b55);
+      padding: 3rem 0;
+    }
+
+    .features .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .feature-box {
+      background: #1f1f2e;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature-box h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #ffd3f5;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box p {
+      color: #d0c6f7;
+      font-size: 0.95rem;
+    }
+
+    .pricing {
+      background: #2b2b3c;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .pricing h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      color: #ffb3ec;
+    }
+
+    .pricing p {
+      color: #e0e0e0;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .price-options {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      background: #3b3b4f;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .price-card h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #ffe4f8;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+      color: #fff;
+    }
+
+    .buy-btn {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      padding: 0.8rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .buy-btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.85rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #2b2b3c;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content .invite-btn {
+      background: #5865F2;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    .modal-content .invite-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #bbb;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .btn-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">SparxNow</div>
+    <div class="menu">
+      <a href="#features">features</a>
+      <a href="#pricing">pricing</a>
+      <a href="#sparxnow">sparxnow</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>SparxNow Cheat</h1>
+    <p>The ultimate hack for mastering your Sparx homework—fast, smooth, and smart.</p>
+    <div class="btn-group">
+      <a href="#" class="btn" id="discordHeroBtn">Join Discord</a>
+      <a href="#sparxnow" class="btn-grey">Learn More</a>
+    </div>
+  </section>
+
+  <section id="sparxnow" class="bookworks">
+    <div class="container">
+      <h2>Bookworks</h2>
+      <p>SparxNow redefines bookwork capturing with an efficient system that records almost every answer in an easily accessible format.</p>
+      <p><strong>One of a kind:</strong> The only product on the market.</p>
+      <p><strong>Indubitably fast solver:</strong> Dependable AutoBookworks™</p>
+      <p><strong>Extraordinary Customization:</strong> Tailor it to your style.</p>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container grid">
+      <div class="feature-box"><h3>At Its Core</h3><p>A powerful math solver Chrome extension...</p></div>
+      <div class="feature-box"><h3>Secure</h3><p>Our system uses obfuscation and encryption...</p></div>
+      <div class="feature-box"><h3>Private</h3><p>GDPR compliant and only stores...</p></div>
+      <div class="feature-box"><h3>Updates</h3><p>Purchase or subscribe once and receive...</p></div>
+      <div class="feature-box"><h3>Care for Users</h3><p>We value every customer...</p></div>
+      <div class="feature-box"><h3>Bookworks</h3><p>Enjoy a lightweight solution for auto-saving bookworks...</p></div>
+      <div class="feature-box"><h3>Support</h3><p>Our team is available 24/7 on Discord...</p></div>
+      <div class="feature-box"><h3>Free Trial</h3><p>Experience a 3-day free trial...</p></div>
+      <div class="feature-box"><h3>Themes</h3><p>Enjoy beautiful, handcrafted themes...</p></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2>Choose Your Plan</h2>
+    <p>Choose from our affordable pricing options—no hidden fees, just a smooth experience.</p>
+    <div class="price-options">
+      <div class="price-card">
+        <h3>Monthly</h3>
+        <div class="price">£2.99</div>
+        <a href="#" class="buy-btn" id="buyMonthly">Buy Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Lifetime</h3>
+        <div class="price">£5.99</div>
+        <a href="#" class="buy-btn" id="buyLifetime">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> SparxNow. All Rights Reserved.
+  </footer>
+
+  <div id="discordModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div class="description">
+        Welcome to SparxNow! Join our friendly Discord community to enjoy your free trial and access our powerful cheat tool.
+      </div>
+      <a href="https://discord.gg/2H6nrFYH" target="_blank" class="invite-btn">Join Discord</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const buyBtns = [ 
+      document.getElementById('buyMonthly'),
+      document.getElementById('buyLifetime'),
+      document.getElementById('discordHeroBtn')
+    ];
+    const modal = document.getElementById('discordModal');
+    const closeModal = document.getElementById('closeModal');
+    buyBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+      });
+    });
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
