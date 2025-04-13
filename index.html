@@ -275,9 +275,10 @@
       background: #2b2b3c;
       border-radius: 8px;
       padding: 2rem;
-      max-width: 600px;
+      max-width: 750px;
       text-align: center;
       position: relative;
+      width: 90%; /* Increased the modal width */
     }
 
     .modal-content .invite-btn {
@@ -304,6 +305,13 @@
 
     .close-btn:hover {
       color: white;
+    }
+
+    /* Reduce the size of the logo */
+    .modal-content .logo {
+      width: 50%;
+      max-width: 150px; /* Adjust the logo size */
+      margin: 0 auto 1rem;
     }
 
     @media (max-width: 768px) {
