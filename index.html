@@ -1,257 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <title>SparxNow Cheat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Elegant fonts: Poppins for headings and Roboto for body text -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-  :root {
-    --primary-color: #808080; /* Changed to grey */
-    --accent-color: #00c9ff;
-    --text-color: #ffffff;
-    --bg-color: #0f0f0f;
-    --card-bg: #1c1c1c;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-  }
-
-  nav {
-    background-color: #000;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav .logo {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    font-weight: 700;
-  }
-
-  nav .menu a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-  }
-
-  nav .menu a:hover {
-    color: var(--primary-color);
-  }
-
-  .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to right, #1f1f1f, #121212);
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--accent-color);
-  }
-
-  .hero p {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #ccc;
-  }
-
-  .btn-group {
-    margin-top: 30px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    background-image: url('sparxnow.png'); /* Replace with sparxnow.png */
-    background-size: contain;
-    background-repeat: no-repeat;
-    text-align: center;
-  }
-
-  .btn:hover {
-    background-image: url('sparxnow2.png'); /* Replace with sparxnow2.png */
-    transform: scale(1.05);
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin: 60px 0 20px;
-    color: var(--primary-color);
-  }
-
-  .features .container,
-  .bookworks .container,
-  .pricing .price-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-  }
-
-  .feature-box {
-    background-color: var(--card-bg);
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 30px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 20px rgba(255, 64, 129, 0.2);
-  }
-
-  .feature-box:hover {
-    transform: translateY(-10px);
-  }
-
-  .feature-box h3 {
-    color: var(--accent-color);
-    margin-bottom: 15px;
-  }
-
-  .pricing {
-    background-color: #111;
-    padding: 80px 20px;
-    text-align: center;
-  }
-
-  .price-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 40px;
-    width: 250px;
-    box-shadow: 0 0 15px rgba(0, 201, 255, 0.2);
-  }
-
-  .price-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-
-  .price {
-    font-size: 2rem;
-    margin: 10px 0 20px;
-    color: var(--accent-color);
-  }
-
-  .buy-btn {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-    background-image: url('sparxnow.png'); /* Replace with sparxnow.png */
-    background-size: contain;
-    background-repeat: no-repeat;
-    text-align: center;
-  }
-
-  .buy-btn:hover {
-    background-image: url('sparxnow2.png'); /* Replace with sparxnow2.png */
-  }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #999;
-  }
-
-  /* Modal Styling */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal-content {
-    background: var(--card-bg);
-    color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 201, 255, 0.3);
-    animation: popUp 0.3s ease;
-  }
-
-  .modal-content .logo {
-    width: 80px;
-    margin-bottom: 20px;
-  }
-
-  .modal-content .description {
-    margin-bottom: 20px;
-  }
-
-  .invite-btn {
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2rem;
-    color: #999;
-    cursor: pointer;
-  }
-
-  @keyframes popUp {
-    from {
-      transform: scale(0.8);
-      opacity: 0;
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      transform: scale(1);
-      opacity: 1;
+    
+    html, body {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
-  }
-</style>
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #ffffff;
+    }
+
+    /* Minimal Invite Modal (Integrated Invite Page) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.9);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    /* Modal Images Above Join Button */
+    .modal-images {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-images img {
+      max-width: 150px;
+      border-radius: 8px;
+    }
+
+    /* Modal Logo Image */
+    .modal-content .logo {
+      width: 120px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .modal-content .description {
+      font-size: 1.05rem;
+      color: #cccccc;
+      line-height: 1.4;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .modal-content .invite-btn {
+      background: #5865F2;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(88,101,242,0.4);
+      display: inline-block;
+    }
+
+    .modal-content .invite-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 6px 14px rgba(88,101,242,0.6);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+
+  </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav>
     <div class="logo">SparxNow</div>
@@ -268,63 +142,25 @@
     <p>
       The ultimate hack for mastering your Sparx homework—fast, smooth, and smart.
     </p>
+    <!-- Single Join Discord button -->
     <div class="btn-group">
       <a href="#" class="btn" id="discordHeroBtn">Join Discord</a>
     </div>
   </section>
 
-  <!-- Bookworks Section -->
-  <section id="sparxnow" class="bookworks">
-    <div class="container">
-      <div class="content">
-        <h2>Bookworks</h2>
-        <p>
-          SparxNow redefines bookwork capturing with an efficient system that records almost every answer in an easily accessible format.
-        </p>
-        <p><strong>One of a kind:</strong> The only product on the market.</p>
-        <p><strong>Indubitably fast solver:</strong> Dependable AutoBookworks™</p>
-        <p><strong>Extraordinary Customization:</strong> Tailor it to your style.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2 class="section-title">What is SparxNow?</h2>
-    <div class="container grid">
-      <!-- Feature boxes from your code -->
-      <!-- [REDACTED] to keep this snippet short -->
-    </div>
-  </section>
-
-  <!-- Pricing & CTA Section -->
-  <section id="pricing" class="pricing">
-    <h2>Choose Your Plan</h2>
-    <p>Choose from our affordable pricing options—no hidden fees, just a smooth experience.</p>
-    <div class="price-options">
-      <div class="price-card">
-        <h3>Monthly</h3>
-        <div class="price">£2.99</div>
-        <a href="#" class="buy-btn" id="buyMonthly">Buy Now</a>
-      </div>
-      <div class="price-card">
-        <h3>Lifetime</h3>
-        <div class="price">£5.99</div>
-        <a href="#" class="buy-btn" id="buyLifetime">Buy Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; <span id="year"></span> SparxNow. All Rights Reserved.
-  </footer>
-
-  <!-- Modal Invite Popup -->
+  <!-- Minimal Invite Modal -->
   <div id="discordModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
+      <!-- Grey Bot Logo Image -->
       <img src="sparxnow-logo-grey.png" alt="SparxNow Logo" class="logo">
+      
+      <!-- New Section for Sparx Images above the Join Button -->
+      <div class="modal-images">
+        <img src="sparx1.png" alt="Sparx Image 1">
+        <img src="sparx2.png" alt="Sparx Image 2">
+      </div>
+
       <div class="description">
         Welcome to SparxNow! Join our friendly Discord community to enjoy your free trial and access our powerful cheat tool.
       </div>
@@ -332,34 +168,36 @@
     </div>
   </div>
 
-  <!-- JavaScript Magic (the brains of this operation) -->
+  <!-- JavaScript for Modal Popup -->
   <script>
+    // Update footer year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const buyBtns = [
-      document.getElementById('buyMonthly'),
-      document.getElementById('buyLifetime'),
+    
+    // Get modal elements
+    const buyBtns = [ 
       document.getElementById('discordHeroBtn')
     ];
     const modal = document.getElementById('discordModal');
     const closeModal = document.getElementById('closeModal');
-
+    
+    // Open modal when clicking any relevant button
     buyBtns.forEach(btn => {
-      btn.addEventListener('click', e => {
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         modal.style.display = 'flex';
       });
     });
-
+    
+    // Close modal on click of the close button or outside the modal content
     closeModal.addEventListener('click', () => {
       modal.style.display = 'none';
     });
-
-    window.addEventListener('click', e => {
+    window.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
       }
     });
   </script>
+
 </body>
 </html>
