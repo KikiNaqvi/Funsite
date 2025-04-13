@@ -148,6 +148,150 @@
       box-shadow: 0 6px 14px rgba(78, 96, 255, 0.6);
     }
     
+    /* Bookworks Section */
+    .bookworks {
+      background: #1a1a1a;
+      padding: 3rem 0;
+    }
+    
+    .bookworks .content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .bookworks .content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .bookworks .content p {
+      margin-bottom: 1rem;
+      color: #c0c0c0;
+      font-size: 1rem;
+    }
+    
+    /* Features Section */
+    .features {
+      background: #181818;
+      padding: 3rem 0;
+    }
+    
+    .features .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+    
+    .feature-box {
+      background: #242424;
+      border-radius: 6px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-box h3 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+    }
+    
+    .feature-box p {
+      font-size: 0.95rem;
+      color: #b0b0b0;
+    }
+    
+    /* Pricing & CTA Section */
+    .pricing {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    
+    .pricing h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    
+    .pricing p {
+      margin-bottom: 2rem;
+      color: #c0c0c0;
+      font-size: 1.05rem;
+    }
+    
+    .price-options {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .price-card {
+      background: #242424;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+    
+    .price-card:hover {
+      transform: translateY(-4px);
+    }
+    
+    .price-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+    
+    .price-card .price {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin: 0.5rem 0 1rem;
+    }
+    
+    .buy-btn {
+      background: linear-gradient(135deg, #4e60ff, #2d38e6);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 8px rgba(78, 96, 255, 0.4);
+      margin-top: 1rem;
+      display: inline-block;
+    }
+    
+    .buy-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 6px 14px rgba(78, 96, 255, 0.6);
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.8rem;
+    }
+    
     /* Minimal Invite Modal (Integrated Invite Page) */
     .modal {
       display: none;
@@ -221,6 +365,21 @@
     .close-btn:hover {
       color: #fff;
     }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      nav .menu {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .price-options {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -247,10 +406,25 @@
     </div>
   </section>
 
+  <!-- Bookworks Section -->
+  <section id="sparxnow" class="bookworks">
+    <div class="container">
+      <div class="content">
+        <h2>Bookworks</h2>
+        <p>
+          SparxNow redefines bookwork capturing with an efficient system that records almost every answer in an easily accessible format.
+        </p>
+        <p><strong>One of a kind:</strong> The only product on the market.</p>
+        <p><strong>Indubitably fast solver:</strong> Dependable AutoBookworks™</p>
+        <p><strong>Extraordinary Customization:</strong> Tailor it to your style.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section -->
   <section id="features" class="features">
     <h2 class="section-title">What is SparxNow?</h2>
-    <div class="container">
+    <div class="container grid">
       <div class="feature-box">
         <h3>At Its Core</h3>
         <p>
@@ -263,8 +437,73 @@
           Our system uses obfuscation and encryption to safeguard our servers and your computer.
         </p>
       </div>
+      <div class="feature-box">
+        <h3>Private</h3>
+        <p>
+          GDPR compliant and only stores essential data to identify you and fix bugs.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Updates</h3>
+        <p>
+          Purchase or subscribe once and receive lifetime updates.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Care for Users</h3>
+        <p>
+          We value every customer; your feedback drives our growth and improvements.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Bookworks</h3>
+        <p>
+          Enjoy a lightweight solution for auto-saving bookworks that improves with every update.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Support</h3>
+        <p>
+          Our team is available 24/7 on Discord to assist with your cheat needs.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Free Trial</h3>
+        <p>
+          Experience a 3-day free trial by joining our Discord community.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Themes</h3>
+        <p>
+          Enjoy beautiful, handcrafted themes created with our extensive CSS expertise.
+        </p>
+      </div>
     </div>
   </section>
+
+  <!-- Pricing & CTA Section -->
+  <section id="pricing" class="pricing">
+    <h2>Choose Your Plan</h2>
+    <p>Choose from our affordable pricing options—no hidden fees, just a smooth experience.</p>
+    <div class="price-options">
+      <div class="price-card">
+        <h3>Monthly</h3>
+        <div class="price">£2.99</div>
+        <a href="#" class="buy-btn" id="buyMonthly">Buy Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Lifetime</h3>
+        <div class="price">£5.99</div>
+        <a href="#" class="buy-btn" id="buyLifetime">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> SparxNow. All Rights Reserved.
+  </footer>
 
   <!-- Minimal Invite Modal -->
   <div id="discordModal" class="modal">
@@ -281,8 +520,13 @@
 
   <!-- JavaScript for Modal Popup -->
   <script>
+    // Update footer year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
     // Get modal elements
     const buyBtns = [ 
+      document.getElementById('buyMonthly'),
+      document.getElementById('buyLifetime'),
       document.getElementById('discordHeroBtn')
     ];
     const modal = document.getElementById('discordModal');
