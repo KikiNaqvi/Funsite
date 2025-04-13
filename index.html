@@ -215,35 +215,6 @@
       background: #333;
       transform: translateY(-3px);
     }
-    /* Testimonials Section */
-    .testimonials {
-      background: #181818;
-      padding: 3rem 1rem;
-    }
-    .testimonials .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .testimonial-card {
-      background: #242424;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .testimonial-card p {
-      font-size: 0.95rem;
-      color: #bbb;
-      margin-bottom: 0.8rem;
-    }
-    .testimonial-card .name {
-      color: #fff;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-    }
     /* Footer */
     footer {
       background: #1a1a1a;
@@ -274,30 +245,17 @@
       max-width: 600px;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.9);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.9);
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
-    /* Modal logo style */
+    /* Modal logo image */
     .modal-content .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 3rem;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative;
-      display: inline-block;
-    }
-    .modal-content .logo::after {
-      content: ">";
-      position: absolute;
-      right: -1.5rem;
-      top: 0.2rem;
-      color: #777;
-      font-size: 2rem;
-      transform: rotate(15deg);
+      width: 120px;
+      height: auto;
+      margin: 0 auto;
     }
     .modal-content .description {
       font-size: 1rem;
@@ -319,11 +277,6 @@
     .modal-content .invite-btn:hover {
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 6px 14px rgba(88,101,242,0.6);
-    }
-    .modal-content .subinfo {
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 1rem;
     }
     .close-btn {
       position: absolute;
@@ -356,8 +309,6 @@
     <div class="menu">
       <a href="#features">features</a>
       <a href="#pricing">pricing</a>
-      <a href="#kahoot">kahoot</a>
-      <a href="#seneca">seneca</a>
       <a href="#sparxnow">sparxnow</a>
     </div>
   </nav>
@@ -459,43 +410,21 @@
     <a href="#" class="buy-btn" id="buyBtn">Click Here to Buy</a>
   </section>
 
-  <!-- Kahoot & Seneca Testimonials -->
-  <section id="kahoot" class="testimonials">
-    <h2 class="section-title">Kahoot & Seneca Cheats</h2>
-    <div class="container grid">
-      <div class="testimonial-card">
-        <p>
-          "Their Kahoot cheat saved me in a pinch! Quizzes have never been easier."
-        </p>
-        <div class="name">- A Happy Kahoot User</div>
-      </div>
-      <div class="testimonial-card">
-        <p>
-          "The Seneca cheat is unbelievably fast and straightforward. I highly recommend it."
-        </p>
-        <div class="name">- Satisfied Seneca Student</div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
     &copy; <span id="year"></span> SparxNow. All Rights Reserved.
   </footer>
 
-  <!-- Minimal Invite Modal (Integrated Invite Page) -->
+  <!-- Minimal Invite Modal -->
   <div id="discordModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
-      <div class="logo">SparxNow</div>
+      <!-- Grey Bot Logo Image -->
+      <img src="sparxnow-logo-grey.png" alt="SparxNow Logo" class="logo">
       <div class="description">
-        Hi! I'm the SparxNow bot. Join our Discord community today to get your 3-day free trial and boost your homework progress with our advanced cheat tools.
+        Welcome to SparxNow! Join our friendly Discord community to get your 3-day free trial and discover how our cheat tool can simplify your homework.
       </div>
       <a href="https://discord.gg/2H6nrFYH" target="_blank" class="invite-btn">Join Discord</a>
-      <div class="subinfo">
-        Created on 22 Mar 2025<br />
-        Explore features, enjoy premium support, and get your homework done faster.
-      </div>
     </div>
   </div>
 
@@ -510,14 +439,14 @@
     const modal = document.getElementById('discordModal');
     const closeModal = document.getElementById('closeModal');
 
-    // Open modal when clicking hero or pricing button
+    // Open modal when clicking either the hero or pricing buttons
     [buyBtn, discordHeroBtn].forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         modal.style.display = 'flex';
       });
     });
-    // Close modal on click of the close button or outside of modal content
+    // Close modal on click of the close button or outside the modal content
     closeModal.addEventListener('click', () => {
       modal.style.display = 'none';
     });
