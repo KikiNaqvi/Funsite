@@ -274,11 +274,19 @@
     .modal-content {
       background: #2b2b3c;
       border-radius: 8px;
-      padding: 2rem;
+      padding: 2rem 2rem 3rem; /* Added more bottom padding */
       max-width: 750px;
       text-align: center;
       position: relative;
-      width: 90%; /* Increased the modal width */
+      width: 90%; /* Keeps the modal wide */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Ensures the content and button are spread out */
+      height: 350px; /* Set a fixed height for the modal */
+    }
+
+    .modal-content .description {
+      flex-grow: 1; /* This allows the description to take up available space */
     }
 
     .modal-content .invite-btn {
@@ -288,7 +296,7 @@
       border-radius: 5px;
       font-weight: 600;
       transition: transform 0.3s ease;
-      margin-top: 1rem;  /* Added margin to move the button down */
+      margin-top: auto; /* This forces the button to the bottom */
     }
 
     .modal-content .invite-btn:hover {
@@ -378,51 +386,44 @@
         <a href="#" class="buy-btn" id="buyMonthly">Buy Now</a>
       </div>
       <div class="price-card">
-        <h3>Lifetime</h3>
-        <div class="price">£5.99</div>
-        <a href="#" class="buy-btn" id="buyLifetime">Buy Now</a>
+        <h3>Yearly</h3>
+        <div class="price">£19.99</div>
+        <a href="#" class="buy-btn" id="buyYearly">Buy Now</a>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; <span id="year"></span> SparxNow. All Rights Reserved.
+    <p>Made with love by SparxNow</p>
   </footer>
 
-  <!-- Minimal Invite Modal -->
-  <div id="discordModal" class="modal">
+  <!-- Modal -->
+  <div class="modal" id="discordModal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
-      <!-- Grey Bot Logo Image -->
-      <img src="sparxnow.png" alt="SparxNow Logo" class="logo">
-      <div class="description">
-        Welcome to SparxNow! Join our friendly Discord community to enjoy your free trial and access our powerful cheat tool.
-      </div>
-      <a href="https://discord.gg/2H6nrFYH" target="_blank" class="invite-btn">Join Discord</a>
+      <img src="discord-logo.png" alt="Discord Logo" class="logo">
+      <h3>Join our Discord server</h3>
+      <p class="description">Get support, updates, and talk with fellow SparxNow users on our community Discord server.</p>
+      <a href="https://discord.gg/your-link" class="invite-btn" target="_blank">Join Discord</a>
     </div>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const buyBtns = [ 
-      document.getElementById('buyMonthly'),
-      document.getElementById('buyLifetime'),
-      document.getElementById('discordHeroBtn')
-    ];
-    const modal = document.getElementById('discordModal');
+    const discordHeroBtn = document.getElementById('discordHeroBtn');
+    const discordModal = document.getElementById('discordModal');
     const closeModal = document.getElementById('closeModal');
-    buyBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.style.display = 'flex';
-      });
+
+    discordHeroBtn.addEventListener('click', function() {
+      discordModal.style.display = 'flex';
     });
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
+
+    closeModal.addEventListener('click', function() {
+      discordModal.style.display = 'none';
     });
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
+
+    window.addEventListener('click', function(e) {
+      if (e.target === discordModal) {
+        discordModal.style.display = 'none';
       }
     });
   </script>
