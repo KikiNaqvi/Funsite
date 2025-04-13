@@ -2,190 +2,225 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SparxNow - The Hack for Sparx Homework</title>
+  <title>SparxNow - Your AI Homework Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Using a pair of elegant fonts: Poppins for headings and Roboto for body text -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* Global styles */
+    /* Reset and Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      color: #333;
-      background: #000;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1c1f26, #14171c);
+      color: #ececec;
+      line-height: 1.6;
     }
 
-    /* Navbar styles */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
     .navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.7);
       padding: 1rem 2rem;
-      background-color: #111;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
 
     .navbar .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
       color: #fff;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
+      letter-spacing: 1px;
     }
 
-    .navbar .logo:hover {
-      opacity: 0.8;
-    }
-
-    .navbar .actions {
-      display: none; /* No login needed, so hide it entirely */
-    }
-
-    /* Hero section styles */
+    /* Hero Section */
     .hero {
-      min-height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-image: radial-gradient(circle, #222 20%, #000 120%);
+      min-height: 80vh;
       text-align: center;
-      padding: 2rem;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #283048, #859398);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+      background-size: 50px 50px;
+      animation: slide 10s linear infinite;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(50px); }
     }
 
     .hero h1 {
-      color: #fff;
-      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
 
     .hero p {
-      color: #ddd;
       font-size: 1.2rem;
       max-width: 800px;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #f0f0f0;
     }
 
     .cta-buttons {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .cta-buttons a {
-      display: inline-block;
-      padding: 0.8rem 1.2rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 4px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s ease, color 0.3s ease;
-      font-weight: bold;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .btn-primary {
       background: #00b4d8;
       color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 180, 216, 0.4);
     }
 
     .btn-primary:hover {
       background: #0096c7;
+      transform: translateY(-3px);
     }
 
     .btn-secondary {
       background: #fff;
       color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .btn-secondary:hover {
-      background: #ddd;
+      background: #f7f7f7;
+      transform: translateY(-3px);
     }
 
-    /* Features/Info section */
+    /* Features Section */
     .features {
-      background: #111;
-      color: #eee;
-      padding: 2rem 2rem 8rem;
+      padding: 4rem 2rem;
+      background: #1c1f26;
       text-align: center;
     }
+
     .features h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .features p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Footer "tray" at the bottom */
+    .features p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #c8c8c8;
+      font-size: 1.1rem;
+    }
+
+    /* Bottom Tray */
     .tray {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(50, 50, 50, 0.9);
-      color: #fff;
+      background: rgba(20, 23, 28, 0.95);
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
-      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
-      font-size: 0.9rem;
-      z-index: 9999;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 100;
     }
 
     .tray .tray-text {
       max-width: 70%;
+      font-size: 1rem;
     }
 
     .tray .tray-actions a {
-      background-color: #00b4d8;
+      background: #00b4d8;
       color: #fff;
-      padding: 0.6rem 1.2rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 4px;
-      text-decoration: none;
-      margin-left: 0.8rem;
-      font-weight: bold;
-      transition: opacity 0.3s ease;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .tray .tray-actions a:hover {
-      opacity: 0.8;
+      background: #0096c7;
+      transform: translateY(-2px);
     }
 
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
       .cta-buttons {
         flex-direction: column;
       }
+      .tray {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
       .tray .tray-text {
-        max-width: 60%;
+        max-width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <a href="#" class="logo">SparxNow</a>
-    <!-- No login needed, so the actions are hidden -->
-    <div class="actions"></div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Launch the Best AI Answers</h1>
+    <h1>Elevate Your Homework Game</h1>
     <p>
-      SparxNow – offering swift and affordable AI-powered homework solutions. 
-      Even a Year 7 can afford it! Get your answers in 5 to 7.5 seconds and breeze 
-      through your school tasks in style.
+      Welcome to SparxNow, the premium AI-powered hack for your Sparx homework. Get swift, smart answers that help you nail every assignment without the hassle.
     </p>
     <div class="cta-buttons">
       <a href="#" class="btn-primary">Start Free Trial</a>
@@ -193,25 +228,21 @@
     </div>
   </section>
 
-  <!-- Features / Info -->
+  <!-- Features Section -->
   <section class="features">
-    <h2>Why Choose SparxNow?</h2>
+    <h2>Why SparxNow?</h2>
     <p>
-      With SparxNow, you gain unparalleled access to top-tier AI assistance at a fraction 
-      of the cost. Easily tackle homework challenges, enjoy user-friendly interfaces, and 
-      never break a sweat over deadlines again.
+      With cutting-edge AI, an intuitive interface, and unparalleled speed, SparxNow makes homework a breeze. Our solution is designed to boost your productivity while being delightfully affordable.
     </p>
     <p>
-      We’re so confident, we’re offering a 14-day free trial with no credit card required. 
-      Cancel anytime—no questions asked!
+      Enjoy a 14-day free trial with no hidden charges and transform the way you tackle assignments.
     </p>
   </section>
 
-  <!-- Bottom tray -->
+  <!-- Bottom Tray -->
   <div class="tray">
     <div class="tray-text">
-      <strong>Ready to hack your Sparx homework?</strong> It’s quick, it’s easy, 
-      and it’s unbelievably affordable. Don’t let homework stand in your way.
+      <strong>Ready to revolutionize your homework experience?</strong> It’s quick, seamless, and awaits you below.
     </div>
     <div class="tray-actions">
       <a href="#">Try Now</a>
