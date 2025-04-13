@@ -34,7 +34,120 @@
     a:hover {
       color: #ffffff;
     }
-
+    
+    /* Container Utility */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    
+    /* Navbar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    
+    nav .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+    
+    nav .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav .menu a {
+      color: #e0e0e0;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    nav .menu a:hover {
+      color: #ffffff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #1e1e1e, #121212);
+      overflow: hidden;
+    }
+    
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(rgba(255,255,255,0.05), transparent 60%);
+      animation: shift 10s linear infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes shift {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50px); }
+    }
+    
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+    
+    .hero p {
+      max-width: 700px;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      font-size: 1.15rem;
+    }
+    
+    /* Unified Button for Hero & Pricing with Gradient */
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #4e60ff, #2d38e6);
+      color: #fff;
+      padding: 0.9rem 1.6rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(78, 96, 255, 0.4);
+    }
+    
+    .btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 6px 14px rgba(78, 96, 255, 0.6);
+    }
+    
     /* Minimal Invite Modal (Integrated Invite Page) */
     .modal {
       display: none;
@@ -50,7 +163,7 @@
       align-items: center;
       padding: 1rem;
     }
-
+    
     .modal-content {
       background: #1a1a1a;
       border-radius: 8px;
@@ -65,26 +178,13 @@
       gap: 1.5rem;
     }
     
-    /* Modal Images Above Join Button */
-    .modal-images {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .modal-images img {
-      max-width: 150px;
-      border-radius: 8px;
-    }
-
     /* Modal Logo Image */
     .modal-content .logo {
       width: 120px;
       height: auto;
       margin: 0 auto;
     }
-
+    
     .modal-content .description {
       font-size: 1.05rem;
       color: #cccccc;
@@ -92,7 +192,7 @@
       max-width: 90%;
       margin: 0 auto;
     }
-
+    
     .modal-content .invite-btn {
       background: #5865F2;
       color: #fff;
@@ -103,12 +203,12 @@
       box-shadow: 0 4px 10px rgba(88,101,242,0.4);
       display: inline-block;
     }
-
+    
     .modal-content .invite-btn:hover {
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 6px 14px rgba(88,101,242,0.6);
     }
-
+    
     .close-btn {
       position: absolute;
       top: 10px;
@@ -117,11 +217,10 @@
       color: #888;
       cursor: pointer;
     }
-
+    
     .close-btn:hover {
       color: #fff;
     }
-
   </style>
 </head>
 <body>
@@ -148,19 +247,31 @@
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2 class="section-title">What is SparxNow?</h2>
+    <div class="container">
+      <div class="feature-box">
+        <h3>At Its Core</h3>
+        <p>
+          A powerful math solver Chrome extension engineered for utmost convenience when tackling SparxMaths. Three+ years of perfecting school cheats.
+        </p>
+      </div>
+      <div class="feature-box">
+        <h3>Secure</h3>
+        <p>
+          Our system uses obfuscation and encryption to safeguard our servers and your computer.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Minimal Invite Modal -->
   <div id="discordModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
       <!-- Grey Bot Logo Image -->
       <img src="sparxnow-logo-grey.png" alt="SparxNow Logo" class="logo">
-      
-      <!-- New Section for Sparx Images above the Join Button -->
-      <div class="modal-images">
-        <img src="sparx1.png" alt="Sparx Image 1">
-        <img src="sparx2.png" alt="Sparx Image 2">
-      </div>
-
       <div class="description">
         Welcome to SparxNow! Join our friendly Discord community to enjoy your free trial and access our powerful cheat tool.
       </div>
@@ -170,9 +281,6 @@
 
   <!-- JavaScript for Modal Popup -->
   <script>
-    // Update footer year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
     // Get modal elements
     const buyBtns = [ 
       document.getElementById('discordHeroBtn')
@@ -198,6 +306,5 @@
       }
     });
   </script>
-
 </body>
 </html>
