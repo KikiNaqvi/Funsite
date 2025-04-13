@@ -17,7 +17,7 @@
     html, body {
       height: 100%;
       font-family: 'Roboto', sans-serif;
-      background: #0b0b0b;
+      background: #121212;
       color: #ccc;
       line-height: 1.6;
       scroll-behavior: smooth;
@@ -42,12 +42,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #131313;
+      background: #1a1a1a;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 999;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
     nav .logo {
       font-family: 'Poppins', sans-serif;
@@ -76,7 +76,7 @@
       align-items: center;
       text-align: center;
       padding: 3rem 2rem;
-      background: linear-gradient(135deg, #181818, #0b0b0b);
+      background: linear-gradient(135deg, #1e1e1e, #121212);
       overflow: hidden;
     }
     .hero::after {
@@ -91,7 +91,7 @@
       pointer-events: none;
     }
     @keyframes shift {
-      0%   { transform: translateX(0); }
+      0% { transform: translateX(0); }
       100% { transform: translateX(50px); }
     }
     .hero h1 {
@@ -106,13 +106,14 @@
       margin-bottom: 2rem;
       font-size: 1.1rem;
     }
+    /* Unified Button for Hero and Pricing */
     .btn-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .btn {
+    .hero .btn {
       background: #222;
       color: #fff;
       padding: 0.8rem 1.4rem;
@@ -121,21 +122,13 @@
       transition: background 0.3s, transform 0.3s;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
-    .btn:hover {
+    .hero .btn:hover {
       background: #333;
       transform: translateY(-3px);
     }
-    /* Section Titles */
-    .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #fff;
-    }
     /* Bookworks Section */
     .bookworks {
-      background: #111;
+      background: #1a1a1a;
       padding: 3rem 0;
     }
     .bookworks .content {
@@ -156,7 +149,7 @@
     }
     /* Features Section */
     .features {
-      background: #0f0f0f;
+      background: #181818;
       padding: 3rem 0;
     }
     .features .grid {
@@ -166,7 +159,7 @@
       padding: 0 2rem;
     }
     .feature-box {
-      background: #1a1a1a;
+      background: #242424;
       border-radius: 6px;
       padding: 2rem;
       text-align: center;
@@ -188,7 +181,7 @@
     }
     /* Pricing & CTA Section */
     .pricing {
-      background: #111;
+      background: #1a1a1a;
       text-align: center;
       padding: 3rem 1rem;
     }
@@ -222,9 +215,9 @@
       background: #333;
       transform: translateY(-3px);
     }
-    /* Testimonials / Human Touch Section */
+    /* Testimonials Section */
     .testimonials {
-      background: #0f0f0f;
+      background: #181818;
       padding: 3rem 1rem;
     }
     .testimonials .grid {
@@ -235,7 +228,7 @@
       margin: 0 auto;
     }
     .testimonial-card {
-      background: #1a1a1a;
+      background: #242424;
       border-radius: 6px;
       padding: 1.5rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -253,13 +246,13 @@
     }
     /* Footer */
     footer {
-      background: #131313;
+      background: #1a1a1a;
       text-align: center;
       padding: 1rem;
       color: #888;
       font-size: 0.8rem;
     }
-    /* Modal Popup for Discord Invite */
+    /* Minimal Invite Modal (Integrated Invite Page) */
     .modal {
       display: none;
       position: fixed;
@@ -275,42 +268,62 @@
       padding: 1rem;
     }
     .modal-content {
-      background: #111;
+      background: #1a1a1a;
       border-radius: 8px;
-      max-width: 400px;
       width: 90%;
+      max-width: 600px;
       padding: 2rem;
       text-align: center;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.9);
       position: relative;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-    .modal-content img {
-      max-width: 100px;
-      margin-bottom: 1rem;
-    }
-    .modal-content h3 {
-      margin-bottom: 1rem;
-      color: #fff;
+    /* Modal logo style */
+    .modal-content .logo {
       font-family: 'Poppins', sans-serif;
-    }
-    .modal-content p {
-      margin-bottom: 1.5rem;
-      color: #ccc;
-      font-size: 1rem;
-    }
-    .modal-content a.modal-btn {
-      background: #222;
+      font-size: 3rem;
       color: #fff;
-      padding: 0.8rem 1.4rem;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.3s;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
       display: inline-block;
     }
-    .modal-content a.modal-btn:hover {
-      background: #333;
-      transform: translateY(-3px);
+    .modal-content .logo::after {
+      content: ">";
+      position: absolute;
+      right: -1.5rem;
+      top: 0.2rem;
+      color: #777;
+      font-size: 2rem;
+      transform: rotate(15deg);
+    }
+    .modal-content .description {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .modal-content .invite-btn {
+      background: #5865F2;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(88,101,242,0.4);
+      display: inline-block;
+    }
+    .modal-content .invite-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 6px 14px rgba(88,101,242,0.6);
+    }
+    .modal-content .subinfo {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 1rem;
     }
     .close-btn {
       position: absolute;
@@ -345,7 +358,7 @@
       <a href="#pricing">pricing</a>
       <a href="#kahoot">kahoot</a>
       <a href="#seneca">seneca</a>
-      <a href="#sparxext">sparxext</a>
+      <a href="#sparxnow">sparxnow</a>
     </div>
   </nav>
 
@@ -353,21 +366,21 @@
   <section class="hero">
     <h1>SparxNow Cheat</h1>
     <p>
-      The ultimate hack for mastering your Sparx homework. No tedious steps—just a smooth, powerful cheat tool at your fingertips.
+      The ultimate hack to master your Sparx homework with ease. Enjoy a smooth, powerful cheat tool at your fingertips.
     </p>
+    <!-- Single Join Discord button -->
     <div class="btn-group">
-      <a href="#get-started" class="btn">Get Started</a>
-      <a href="#learn-more" class="btn">Learn More</a>
+      <a href="#" class="btn" id="discordHeroBtn">Join Discord</a>
     </div>
   </section>
 
   <!-- Bookworks Section -->
-  <section id="sparxext" class="bookworks">
+  <section id="sparxnow" class="bookworks">
     <div class="container">
       <div class="content">
         <h2>Bookworks</h2>
         <p>
-          SparxExt redefines bookwork capturing with an efficient system that logs nearly every answer in an easily accessible format.
+          SparxNow redefines bookwork capturing with an efficient system that logs almost every answer in an easily accessible format.
         </p>
         <p><strong>One of a kind:</strong> The only product on the market.</p>
         <p><strong>Indubitably fast solver:</strong> Dependable AutoBookworks™</p>
@@ -378,18 +391,18 @@
 
   <!-- Features Section -->
   <section id="features" class="features">
-    <h2 class="section-title">What is SparxExt?</h2>
+    <h2 class="section-title">What is SparxNow?</h2>
     <div class="container grid">
       <div class="feature-box">
         <h3>At Its Core</h3>
         <p>
-          A powerful math solver Chrome extension engineered for utmost convenience when tackling SparxMaths. Three+ years of refining school cheats.
+          A powerful math solver Chrome extension engineered for utmost convenience when tackling SparxMaths. Three+ years of perfecting school cheats.
         </p>
       </div>
       <div class="feature-box">
         <h3>Secure</h3>
         <p>
-          Our system uses obfuscation and encryption to protect our servers and your computer.
+          Our system uses obfuscation and encryption to safeguard our servers and your computer.
         </p>
       </div>
       <div class="feature-box">
@@ -419,7 +432,7 @@
       <div class="feature-box">
         <h3>Support</h3>
         <p>
-          Our team is ready 24/7 on Discord to help with your cheat needs.
+          Our team is available 24/7 on Discord to assist with your cheat needs.
         </p>
       </div>
       <div class="feature-box">
@@ -431,7 +444,7 @@
       <div class="feature-box">
         <h3>Themes</h3>
         <p>
-          Beautiful, handcrafted themes using our extensive CSS expertise.
+          Enjoy beautiful, handcrafted themes crafted with our extensive CSS expertise.
         </p>
       </div>
     </div>
@@ -470,32 +483,41 @@
     &copy; <span id="year"></span> SparxNow. All Rights Reserved.
   </footer>
 
-  <!-- Discord Invite Modal -->
+  <!-- Minimal Invite Modal (Integrated Invite Page) -->
   <div id="discordModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
-      <!-- Replace with your actual SparxNow logo image -->
-      <img src="sparxnow-logo.png" alt="SparxNow Logo">
-      <h3>Join Our Discord Server</h3>
-      <p>Click below to join our community and start your 3-day free trial.</p>
-      <a class="modal-btn" href="https://discord.gg/2H6nrFYH" target="_blank">Join Discord</a>
+      <div class="logo">SparxNow</div>
+      <div class="description">
+        Hi! I'm the SparxNow bot. Join our Discord community today to get your 3-day free trial and boost your homework progress with our advanced cheat tools.
+      </div>
+      <a href="https://discord.gg/2H6nrFYH" target="_blank" class="invite-btn">Join Discord</a>
+      <div class="subinfo">
+        Created on 22 Mar 2025<br />
+        Explore features, enjoy premium support, and get your homework done faster.
+      </div>
     </div>
   </div>
 
   <!-- JavaScript for Modal Popup -->
   <script>
-    // Update year in footer
+    // Update footer year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Modal functionality for Discord invite
+    // Get modal elements
     const buyBtn = document.getElementById('buyBtn');
+    const discordHeroBtn = document.getElementById('discordHeroBtn');
     const modal = document.getElementById('discordModal');
     const closeModal = document.getElementById('closeModal');
 
-    buyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.style.display = 'flex';
+    // Open modal when clicking hero or pricing button
+    [buyBtn, discordHeroBtn].forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+      });
     });
+    // Close modal on click of the close button or outside of modal content
     closeModal.addEventListener('click', () => {
       modal.style.display = 'none';
     });
